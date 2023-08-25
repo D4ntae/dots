@@ -1,0 +1,18 @@
+#History lists
+
+[image_list]
+"/usr/share/icons/Papirus-Dark/24x24/apps/6180-the-moon.svg"
+"/home/dantae/Downloads/image(11).png"
+"/home/dantae/.config/firefox/D4ntae.github.io/icons/mail.png"
+
+[shortcuts]
+"Home[path]/home/dantae"
+"Desktop[path]/home/dantae/Desktop"
+"Collections[path]/home/dantae/.local/share/geeqie/collections"
+
+[path_list]
+"/usr/share/icons/Papirus-Dark/24x24/apps"
+"/home/dantae/Downloads"
+"/home/dantae/.config/firefox/D4ntae.github.io/icons"
+
+#end

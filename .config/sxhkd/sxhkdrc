@@ -1,0 +1,2 @@
+super + r
+	rofi -show drun

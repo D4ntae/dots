@@ -5,4 +5,6 @@
 !.gitkrc-2.0
 !.face
 !.gitignore
-/.config/firefox/*
+!/.config/firefox/config_files/*
+!aurpkglist.txt
+!pkglist.txt

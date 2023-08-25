@@ -1,0 +1,8 @@
+apulse
+catppuccin-gtk-theme-mocha
+lightdm-webkit-theme-aether
+paru
+ttf-ms-win10-auto
+visual-studio-code-bin
+web-greeter
+web-greeter-theme-shikai

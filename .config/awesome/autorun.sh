@@ -7,5 +7,7 @@ run() {
   fi
 }
 
-xrandr --output Virtual1 --mode 1920x1080
 run sxhkd
+run nm-applet
+run picom
+run blueman-applet

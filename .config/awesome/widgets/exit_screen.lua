@@ -97,12 +97,12 @@ create_exit_screen = function(s)
 		type = 'splash',
 		visible = false,
 		ontop = true,
-		bg = beautiful.background,
+		bg = "#00000002",
 		fg = beautiful.fg_normal,
 		height = s.geometry.height,
 		width = s.geometry.width,
 		x = s.geometry.x,
-		y = s.geometry.y
+		y = s.geometry.y,
 	}
 
 	s.exit_screen:buttons(

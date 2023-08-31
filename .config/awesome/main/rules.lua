@@ -54,10 +54,19 @@ local rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
-
+    {
+        rule = { class = "File-roller" },
+        properties = {
+          x = (screen_geo.width - 800) / 2,
+          y = (screen_geo.height - 400) / 2,
+          width = 800,
+          height = 600,
+          floating = true,
+        },
+      },
     {
       rule = { class = "Thunar", type = "dialog" },
-      properties = { 
+      properties = {
         floating = true,
         x = (screen_geo.width - floating_width) / 2 + floating_width / 2 - 150,
         y = (screen_geo.height - floating_height) / 2 + floating_height / 2 - 70,
@@ -66,13 +75,13 @@ local rules = {
     },
 
     {
-      rule = { name = "Thunar" },
-      properties = { 
+      rule = { class = "Thunar" },
+      properties = {
         floating = true,
         x = (screen_geo.width - floating_width) / 2,
         y = (screen_geo.height - floating_height) / 2,
         width = floating_width,
-        height = floating_height 
+        height = floating_height,
       },
     },
 
@@ -83,10 +92,18 @@ local rules = {
         x = (screen_geo.width - floating_width) / 2,
         y = (screen_geo.height - floating_height) / 2,
         width = floating_width,
-        height = floating_height 
+        height = floating_height,
+        titlebars_enabled = true,
       },
     },
 
+    {
+      rule = { type = "dialog" },
+      properties = {
+        floating = true,
+        titlebars_enabled = true
+      }
+    },
 
     {
       rule = { class = "floating-alacritty" },
@@ -95,10 +112,28 @@ local rules = {
         x = (screen_geo.width - 800) / 2,
         y = (screen_geo.height - 400) / 2,
         width = 800,
-        height = 400 
+        height = 400,
       },
     },
-
+      {
+        rule = { class = "blueman-manager"},
+        properties = {
+          x = (screen_geo.width - 800) / 2,
+          y = (screen_geo.height - 400) / 2,
+          titlebars_enabled = true,
+        },
+      },
+    {
+      rule = { name = "Minecraft 1.20.1" },
+      properties = {
+        floating = true,
+        width = 854,
+        height = 480,
+        titlebars_enabled = true,
+        x = (screen_geo.width - 800) / 2,
+        y = (screen_geo.height - 600) / 2
+      }
+    }
 }
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },

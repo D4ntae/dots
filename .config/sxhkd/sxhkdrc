@@ -1,2 +1,13 @@
 super + r
 	rofi -show drun
+Shift_R + Alt_R
+    setxkbmap -query | grep -q 'hr' && setxkbmap us || setxkbmap hr,us
+
+@Print
+    screenshot
+
+shift + @Print
+    screenshot select
+
+control + @Print
+    screenshot window

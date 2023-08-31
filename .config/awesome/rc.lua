@@ -1,4 +1,4 @@
--- If LuaRocks is installed, make sure that packages installed through it are
+-- Iu LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
@@ -123,7 +123,7 @@ awful.screen.connect_for_each_screen(function(s)
             for _, t in ipairs(c:tags()) do
             if tag == t then
                 -- color for other tags with at least one client
-                widget:get_children_by_id("circle")[1].bg = "#eba0ac"
+                widget:get_children_by_id("circle")[1].bg = "#585b70"
                 return
             end
             end
@@ -212,7 +212,7 @@ awful.screen.connect_for_each_screen(function(s)
             bg = "#181825",
             shape = function (cr, w, h)
                 gears.shape.rounded_rect(cr, w, h, 7)
-            end,            
+            end,
             widget = wibox.container.background
         },
         widget = wibox.container.constraint
@@ -222,7 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
         {
             {
                 battery_widget {
-                    show_current_level=true, 
+                    show_current_level=true,
                     display_notification=true,
                     path_to_icons = "/home/dantae/.config/awesome/icons/battery/"
                 },
@@ -278,11 +278,31 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- WIFI widget
     local wifiwidget = require("widgets.wifi")
-    
     -- Lockbar widget
     local mylockbar = require("widgets.lock")
 
+    -- Weather widget
+    local myweather = require("widgets.weather")
+
+    -- Brightness widget
+    local mybright = require("widgets.brightness")
     -- Add widgets to the wibox
+    local textclockwidget = {
+        {
+            {
+                mytextclock,
+                left = 5,
+                right = 5,
+                top = 5,
+                bottom = 5,
+                widget = wibox.container.margin
+            },
+            bg = "#181825",
+            shape = gears.shape.rounded_rect,
+            widget = wibox.container.background
+        },
+        widget = wibox.container.constraint
+    }
     s.mywibox:setup {
         {
             { -- Left widgets
@@ -290,7 +310,12 @@ awful.screen.connect_for_each_screen(function(s)
                 fill_vertical = true,
                 content_fill_vertical = true,
                 halign = "left",
-                mytextclock,
+                {
+                    textclockwidget,
+                    myweather(),
+                    spacing = 5,
+                    layout = wibox.layout.fixed.horizontal
+                }
             },
             {
                 taglist_background,
@@ -301,7 +326,9 @@ awful.screen.connect_for_each_screen(function(s)
             { -- Right widgets
                 {
                     mykeyboardlayout,
+                    mysystray,
                     wifiwidget(),
+                    mybright(),
                     myvolume,
                     mybattery,
                     mylockbar(),
@@ -349,7 +376,7 @@ for i = 1, 9 do
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
+        awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
                       local screen = awful.screen.focused()
                       local tag = screen.tags[i]
@@ -359,7 +386,7 @@ for i = 1, 9 do
                   end,
                   {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
-        awful.key({ modkey, "Shift" }, "#" .. i + 9,
+        awful.key({ modkey, "Control" }, "#" .. i + 9,
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
@@ -423,28 +450,43 @@ client.connect_signal("request::titlebars", function(c)
         end)
     )
 
-    awful.titlebar(c) : setup {
+    awful.titlebar(c, { size = 15, bg_normal = "#11111b", bg_focus = "#11111b", fg_normal = "#cdd6f4", fg_focus = "#cdd6f4"}) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
+            {
+                awful.titlebar.widget.iconwidget(c),
+                left = 2,
+                right = 2,
+                bottom = 2,
+                top = 2,
+                widget = wibox.container.margin
+            },
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
         { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
             buttons = buttons,
             layout  = wibox.layout.flex.horizontal
         },
         { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
+            {
+                awful.titlebar.widget.maximizedbutton(c),
+                left = 2,
+                right = 2,
+                bottom = 2,
+                top = 2,
+                widget = wibox.container.margin
+            },
+            {
+                awful.titlebar.widget.closebutton(c),
+                left = 2,
+                right = 2,
+                bottom = 2,
+                top = 2,
+                widget = wibox.container.margin
+            },
             layout = wibox.layout.fixed.horizontal()
         },
+        height = 10,
         layout = wibox.layout.align.horizontal
     }
 end)

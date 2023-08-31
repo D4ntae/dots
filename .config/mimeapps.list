@@ -10,6 +10,7 @@ application/x-extension-shtml=userapp-Firefox-5SR191.desktop;
 application/xhtml+xml=userapp-Firefox-5SR191.desktop;
 application/x-extension-xhtml=userapp-Firefox-5SR191.desktop;
 application/x-extension-xht=userapp-Firefox-5SR191.desktop;
+image/png=org.gnome.eog.desktop;
 
 [Default Applications]
 x-scheme-handler/http=userapp-Firefox-5SR191.desktop

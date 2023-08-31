@@ -1,0 +1,5 @@
+require("dantae.plugin_install")
+require("dantae.settings")
+require("dantae.keymaps")
+require("dantae.plugin_config")
+require("dantae.lsp")

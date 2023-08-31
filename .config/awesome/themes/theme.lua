@@ -27,7 +27,7 @@ theme.fg_minimize   = "#ffffff"
 theme.useless_gap   = 3
 theme.border_width  = 1
 theme.border_normal = "#000000"
-theme.border_focus  = "#89dceb"
+theme.border_focus  = "#0c2b69"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
@@ -71,8 +71,8 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = themes_path.."default/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = "/home/dantae/.config/awesome/icons/titlebar/close.png"
+theme.titlebar_close_button_focus  = "/home/dantae/.config/awesome/icons/titlebar/close.png"
 
 theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
 theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"
@@ -92,12 +92,12 @@ theme.titlebar_floating_button_focus_inactive  = themes_path.."default/titlebar/
 theme.titlebar_floating_button_normal_active = themes_path.."default/titlebar/floating_normal_active.png"
 theme.titlebar_floating_button_focus_active  = themes_path.."default/titlebar/floating_focus_active.png"
 
-theme.titlebar_maximized_button_normal_inactive = themes_path.."default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_inactive = "/home/dantae/.config/awesome/icons/titlebar/max.png"
+theme.titlebar_maximized_button_focus_inactive  = "/home/dantae/.config/awesome/icons/titlebar/max.png"
+theme.titlebar_maximized_button_normal_active = "/home/dantae/.config/awesome/icons/titlebar/max.png"
+theme.titlebar_maximized_button_focus_active  = "/home/dantae/.config/awesome/icons/titlebar/max.png"
 
-theme.wallpaper = "/home/dantae/.config/awesome/themes/wallpaper.png" 
+theme.wallpaper = "/home/dantae/.config/awesome/themes/wallpaper.jpg" 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
 theme.layout_fairv = themes_path.."default/layouts/fairvw.png"

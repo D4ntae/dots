@@ -8,3 +8,14 @@
 !/.config/firefox/config_files/*
 !aurpkglist.txt
 !pkglist.txt
+/.config/discord/*
+/.config/obsidian/*
+/.config/Code/*
+/.config/qbittorrent/*
+/.config/vlc/*
+/.config/lutris/*
+/.config/qBittorrent/*
+/.config/JetBrains/*
+/.config/xfce4/*
+/.config/peazip/*
+/.config/pulse/*

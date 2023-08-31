@@ -24,7 +24,9 @@ local gkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+    awful.key({ modkey,           }, "w", function () 
+        awful.spawn("firefox")
+    end,
               {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
@@ -106,6 +108,10 @@ local gkeys = gears.table.join(
 
     awful.key( {modkey }, "e", function()
         awesome.emit_signal("module::exit_screen:show")
+    end),
+
+    awful.key( {modkey }, "b", function()
+        awful.spawn("thunar") 
     end)
 )
 

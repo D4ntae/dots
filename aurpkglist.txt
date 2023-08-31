@@ -1,8 +1,10 @@
 apulse
 catppuccin-gtk-theme-mocha
 lightdm-webkit-theme-aether
+optimus-manager
 paru
 ttf-ms-win10-auto
+u2f-emulated
 visual-studio-code-bin
 web-greeter
 web-greeter-theme-shikai
